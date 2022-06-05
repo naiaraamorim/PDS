@@ -1,5 +1,6 @@
 import speech_recognition as sr
-#import os
+import webbrowser
+import os
 
 
 #Função para ouvir e reconhecer a fala
@@ -24,9 +25,12 @@ def ouvir_microfone():
     try:
         #Passa a variável para o algoritmo reconhecedor de padroes
         frase = microfone.recognize_google(audio,language='pt-BR')
-
-        #if "navegador" in frase:
-        #   os.system("start firefox.deb")
+        
+        if "navegador" in frase:
+            os.system("start Chrome.exe")
+            
+        if "Excel" in frase:
+            os.system("start Excel.exe")
 
         #Retorna a frase pronunciada
         print("Você disse: " + frase)
